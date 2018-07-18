@@ -50,7 +50,7 @@ font-2 = Wuncon Siji:pixelsize=12;1
 font-3 = FontAwesome:pixelsize=12;1
 ;font-4 = "Material Icons:pixelsize=15;4"
 
-modules-left = filesystem xkeyboard volume xbacklight
+modules-left = filesystem xkeyboard volume backlight
 modules-center = bspwm
 modules-right = cpu memory wlan eth battery battery2 temperature date powermenu
 
@@ -149,8 +149,9 @@ icon-next = 
 label-song-maxlen = 25
 label-song-ellipsis = true
 
-[module/xbacklight]
-type = internal/xbacklight
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
 
 format = <label> <bar>
 label = 
@@ -167,7 +168,7 @@ bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight-acpi]
-inherit = module/xbacklight
+inherit = module/backlight
 type = internal/backlight
 card = intel_backlight
 
