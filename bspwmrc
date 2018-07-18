@@ -1,0 +1,42 @@
+#! /bin/sh
+
+sxhkd &
+
+#bspc monitor eDP1 -d web term chat code music 6 7
+bspc monitor eDP-1 -d Internet Terminal Code Study Music Virtual Other
+
+bspc config border_width         2
+bspc config window_gap          12
+bspc config focus_follows_pointer true
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a pcmanfm state=floating
+
+# Variables
+DESKTOP_BG=$HOME/images/backgrounds/p3k6ogV.jpg
+PANEL_POSITION='bottom'
+
+# Panel
+#polybar $PANEL_POSITION &
+$HOME/.config/polybar/launch.sh
+
+# Set cursor type
+xsetroot -cursor_name left_ptr
+
+xrdb -merge ~/.Xresources
+
+compton --config ~/.config/compton.conf -b
+
+# Set desktop background
+/usr/bin/feh --bg-scale $DESKTOP_BG
+
+# Start file manager
+#/usr/bin/pcmanfm --desktop
