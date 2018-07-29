@@ -11,15 +11,12 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
+;background = #222
 background = #00000000
 background-alt = #444
-foreground = #f9f9f9
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
 foreground-alt = #555
-
-foreground-active = #0a81f5
-foreground-visible = #888
-foreground-inactive = #aaa
-
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -29,21 +26,21 @@ alert = #bd2c40
 width = 100%
 height = 27
 #offset-x = 1%
-offset-y = 10
+#offset-y = 1%
 radius = 0
 fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-overline-size = 2
-overline-color = #f00
+line-size = 0
+line-color = #f00
 
-border-size = 0
+border-size = 1
 border-color = #333
 
-padding-left = 25
-padding-right = 25
+padding-left = 2
+padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
@@ -121,19 +118,18 @@ ws-icon-default = 
 format = <label-state> <label-mode>
 
 label-focused = %icon%
-label-focused-underline= #220
+label-focused-background = #88000000
+label-focused-underline= #ddd
 label-focused-padding = 4
-label-focused-foreground = ${colors.foreground-active}
 
 label-occupied = %icon%
-label-occupied-foreground = ${colors.foreground}
 label-occupied-padding = 4
 
 label-urgent = %icon%
 label-urgent-padding = 4
 
 label-empty = %icon%
-label-empty-foreground = ${colors.foreground-inactive}
+label-empty-foreground = #44ffffff
 label-empty-padding = 4
 
 [module/xwindow]
@@ -393,6 +389,6 @@ screenchange-reload = true
 
 [global/wm]
 margin-top = 5
-margin-bottom = 0
+margin-bottom = 5
 
 ; vim:ft=dosini
