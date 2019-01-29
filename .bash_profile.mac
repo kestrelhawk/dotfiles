@@ -1,0 +1,16 @@
+export LC_ALL=en_GB.UTF-8
+export LANG=en_GB.UTF-8
+# Tell ls to be colourful
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+# Tell grep to highlight matches
+export GREP_OPTIONS='--color=auto'
+
+# Aliases
+alias ls='ls -F'
+alias ll='ls -l'
+alias la='ls -al'
+alias lt='ls -alt'
+
+# Prompt
+export PS1="\u:\W \$ "
